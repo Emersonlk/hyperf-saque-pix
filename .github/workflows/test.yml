@@ -1,0 +1,36 @@
+name: Test
+
+on:
+  push:
+    branches: [ main, master, develop ]
+  pull_request:
+    branches: [ main, master, develop ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+    
+    - name: Build and start services
+      run: |
+        docker-compose build
+        docker-compose up -d
+    
+    - name: Wait for services
+      run: |
+        sleep 30
+        docker-compose ps
+    
+    - name: Run migrations
+      run: |
+        docker exec hyperf-skeleton php bin/hyperf.php migrate
+    
+    - name: Run tests
+      run: |
+        chmod +x test-from-zero.sh
+        ./test-from-zero.sh || true

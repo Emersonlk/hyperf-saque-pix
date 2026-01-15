@@ -1,0 +1,22 @@
+# Garantir que scripts shell tenham LF (Unix line endings)
+*.sh text eol=lf
+*.bash text eol=lf
+
+# Scripts PowerShell devem ter CRLF (Windows line endings)
+*.ps1 text eol=crlf
+
+# Arquivos de configuração Docker
+Dockerfile text eol=lf
+docker-compose.yml text eol=lf
+docker-entrypoint.sh text eol=lf
+
+# Arquivos de código
+*.php text eol=lf
+*.js text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+
+# Arquivos SQL
+*.sql text eol=lf

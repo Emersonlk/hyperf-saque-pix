@@ -1,0 +1,9 @@
+**
+!app/
+!bin/
+!config/
+!composer.*
+!docker-entrypoint.sh
+!Dockerfile
+!docker-compose.yml
+!migrations/
