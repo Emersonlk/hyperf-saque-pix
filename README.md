@@ -6,7 +6,7 @@ Execute o script simples que apenas inicia o projeto:
 
 ```bash
 git clone <url-do-repositorio>
-cd hyperf-skeleton
+cd hyperf-saque-pix
 chmod +x start.sh
 ./start.sh
 ```
